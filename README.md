@@ -1,33 +1,33 @@
 🌊 Beach Clean-Up & Volunteering Web Page
 📋 Project Overview
-This web page was created to support a beach clean-up initiative by engaging the community through volunteering and environmental awareness. It serves as a central platform to collect data about beachgoers, recruit volunteers, and promote upcoming events related to beach conservation.
+--This web page was created to support a beach clean-up initiative by engaging the community through volunteering and environmental awareness. It serves as a central platform to collect data about beachgoers, recruit volunteers, and promote upcoming events related to beach conservation.
 
 🎯 Purpose
-Encourage beachgoers to contribute to a cleaner, greener environment.
+--Encourage beachgoers to contribute to a cleaner, greener environment.
 
-Recruit and manage volunteers for beach cleanups and related activities.
+--Recruit and manage volunteers for beach cleanups and related activities.
 
-Build a friendly and welcoming community of like-minded individuals.
+--Build a friendly and welcoming community of like-minded individuals.
 
-Allow users to connect and make friends through shared environmental efforts.
+--Allow users to connect and make friends through shared environmental efforts.
 
 ✨ Key Features
-Eye-catching, user-friendly design to attract and retain visitors.
+--Eye-catching, user-friendly design to attract and retain visitors.
 
-Volunteer sign-up forms to register for events.
+--Volunteer sign-up forms to register for events.
 
-Event promotion section to display upcoming beach cleanups and activities.
+--Event promotion section to display upcoming beach cleanups and activities.
 
-Interactive elements to promote engagement and community building.
+--Interactive elements to promote engagement and community building.
 
-Contact section for inquiries and collaboration opportunities.
+--Contact section for inquiries and collaboration opportunities.
 
 🛠️ Technologies Used
-HTML5 – Structure and content
+--HTML5 – Structure and content
 
-CSS3 – Styling and layout
+--CSS3 – Styling and layout
 
-JavaScript – Interactivity
+--JavaScript – Interactivity
 
 
 🤝 Get Involved
