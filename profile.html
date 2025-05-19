@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue</title>
+    <link rel="stylesheet" href="student4-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/icon-logo.png">
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+          <a id="logo" href="" target="_self">
+            <img width="45" src="./images/logo.png" alt="logo">
+          </a>
+          <a href="home.html" target="_self">Home</a>
+          <a href="team.html" target="_self">Team</a>
+          <a href="sitemap.html" target="_self">Sitemap</a>
+          <a style="color: #00ace6;; cursor: pointer;">Profile</a>
+          <a href="volunteer.html" target="_self">Volunteer</a>
+          <a href="table.html" target="_self">Table</a>
+          <a href="feedback.html" target="_self">Feedback</a>
+        </nav>
+    </header>
+
+
+<main>
+    <h2>User Profile</h2>
+    <div class="profile-container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <div class="profile-section">
+                <div class="profile-picture-container">
+                    <img id="avatar-image" src="./images/avatar.jpg" alt="User Avatar" class="avatar">
+                    <label for="profile-picture-input" class="change-profile-button">Change</label>
+                    <input type="file" id="profile-picture-input" accept="image/*">
+                </div>
+                <h2 style="text-decoration: underline;">Joseph Vijay</h2>
+                <p><strong>Age:</strong> 19</p>
+                <p><strong>Work:</strong> Student</p>
+                <p><strong>Location:</strong> Sri Lanka</p>
+            </div>
+            <div>
+                <h2> Bio </h2>
+                <p> "Explorer of ideas, lover of good vibes, and always up for an adventure. Whether I'm lost in a book, chasing dreams, or just enjoying the little things in life, I believe every moment has a story worth telling. Let’s make it legendary!"</p>
+            </div>
+            <div class="profile-section">
+                <h2>Skills & Experience</h2>
+                <ul>
+                    <li> Innovation <span class="bar"><span class="progress" style="width: 60%;"></span></span></li>
+                    <li> Leadership <span class="bar"><span class="progress" style="width: 50%;"></span></span></li>
+                    <li> Teamwork <span class="bar"><span class="progress" style="width: 66%;"></span></span></li>
+                    <li> Communication <span class="bar"><span class="progress" style="width: 75%;"></span></span></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Middle Column -->
+        <div class="middle-column">
+            <div class="profile-section">
+                <h2>Goals</h2>
+                <ul>
+                    <li>Goals 1 - Travel & Exploration</li>
+                    <li>Goals 2 - Physical Fitness & Endurance </li>
+                    <li>Goals 3 - Leadership & Teamwork</li>
+                    <li>Goals 4 - Communication</li>
+                    <li>Goals 5 - Technology Ideas </li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h2>Experience</h2>
+                <ul>
+                    <li> Innovation</li>
+                    <li> Communication </li>
+                    <li> Leadership </li>
+                    <li> Team Work </li>
+                </ul>
+            </div>
+
+            <div class="profile-section">
+                <h2>Interests</h2>
+                <ul>
+                    <li> Innovation</li>
+                    <li> Traveling</li>
+                    <li> Sailing </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <div class="profile-section">
+                <h2>Availability</h2>
+                <div id="calendar"></div>
+            </div>
+
+            <div class="profile-section">
+                <h2>UN Goals</h2>
+                <div class="un-goals">
+                    <img src="./images/goal14.png" alt="Life below water">
+                    <img src="./images/goal11.png" alt="Sustanable cities and communities">
+                    <img src="./images/goal13.png" alt="Climate action">
+                    <img src="./images/goal4.png" alt="Quality Education">
+                    <img src="./images/goal7.png" alt="Affordable and clean energy">
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h2>Contact Details</h2>
+                <table>
+                    <tr>
+                        <th>Contact Method</th>
+                        <th>Details</th>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>Blue12@example.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>+94 (72) 456-7890</td>
+                    </tr>
+                    <tr>
+                        <td>Office Address</td>
+                        <td>123 Main Street, Suite 400, SriLanka, Colombo1</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Contact Me Form -->
+        <div class="contact-me">
+            <div class="profile-section">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <div id="contact-message"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2025 Blue  |  Blue and Clean</p>
+    <p> | </p>
+    <a href="./page_editor_4/pageEditor_ST4.html">Page Editor</a>
+    
+  </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded event fired!"); // Add this line
+
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: false, // Disable date selection
+                events: [
+                    {
+                        title: 'Available',
+                        start: '2024-03-05',
+                        color: '#4caf50'
+                    },
+                    {
+                        title: 'Available',
+                        start: '2024-03-12',
+                        color: '#4caf50'
+                    },
+                    {
+                        title: 'Available',
+                        start: '2024-03-19',
+                        color: '#4caf50'
+                    },
+                    {
+                        title: 'Busy',
+                        start: '2024-03-26',
+                        color: '#f44336 !important'
+                    }
+                ]
+            });
+            calendar.render();
+
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                const contactMessageDiv = document.getElementById('contact-message');
+
+
+                if (!name || !email || !message) {
+                    contactMessageDiv.textContent = 'Please fill in all fields.';
+                    contactMessageDiv.className = 'error';
+                    contactMessageDiv.style.display = 'block';
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    contactMessageDiv.textContent = 'Please enter a valid email address.';
+                    contactMessageDiv.className = 'error';
+                    contactMessageDiv.style.display = 'block';
+                    return;
+                }
+
+
+                contactMessageDiv.textContent = 'Thank you for your message!';
+                contactMessageDiv.className = 'success';
+                contactMessageDiv.style.display = 'block';
+
+                setTimeout(function() {
+                    document.getElementById('name').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('message').value = '';
+                    contactMessageDiv.style.display = 'none';
+                }, 600); // Reset after 0.6 seconds
+
+            });
+
+            function isValidEmail(email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email);
+            }
+
+            // Profile Picture Change Functionality
+            const profilePictureInput = document.getElementById('profile-picture-input');
+            const avatarImage = document.getElementById('avatar-image');
+
+            profilePictureInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        avatarImage.src = e.target.result;
+                    }
+
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+</body>
+</html>

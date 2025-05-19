@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue</title>
+    <link rel="stylesheet" href="student3-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- ADD THIS LINE to include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <link rel="icon" href="images/logo.png">
+
+</head>
+
+<body>
+    <header>
+        <nav>
+          <a id="logo" href="" target="_self">
+            <img src="./images/logo.png" alt="logo" style="width: 45px;">
+          </a>
+          <a href="home.html" target="_self">Home</a>
+          <a href="team.html" target="_self">Team</a>
+          <a href="sitemap.html" target="_self">Sitemap</a>
+          <a href="profile.html" target="_self">Profile</a>
+          <a href="volunteer.html" target="_self">Volunteer</a>
+          <a href="table.html" target="_self">Table</a>
+          <a style="color: #00ace6;; cursor: pointer;">Feedback</a>
+        </nav>
+    </header>
+
+  <main>
+    <div id="feedback" class="feedback-container">
+        <h2 style="text-align: center;">We Value Your Feedback</h2>
+        <p style="text-align: center;">Help us improve our sustainability efforts!</p>
+        <div id="page1" class="page active">
+            <h2>Feedback Form</h2>
+
+            <form id="feedbackForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name is here">
+                <p class="error" id="nameError">Name is required.</p>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Email is here">
+                <p class="error" id="emailError">Enter a valid email.</p>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Phone Number is here">
+                <p class="error" id="phoneError">Enter a 10-digit phone number.</p>
+
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" rows="2" placeholder="Address is here"></textarea>
+                <p class="error" id="addressError">Address is required.</p>
+
+                <label for="file">Upload Image (JPG/PNG/PDF, Max: 2MB):</label>
+                <input type="file" id="file" name="file" accept=".jpg,.jpeg,.png,.pdf">
+                <p class="error" id="fileError">Invalid file type or size too large.</p>
+
+
+                <label>How satisfied were you working with us?</label>
+                <div class="radio-group">
+                    <label style="color: black;"><input type="radio" name="satisfaction" value="Very satisfied">Very Satisfied</label>
+                    <label style="color: black;"><input type="radio" name="satisfaction" value="Satisfied"> Satisfied</label>
+                    <label style="color: black;"><input type="radio" name="satisfaction" value="Neutral" checked> Neutral</label>
+                    <label style="color: black;"><input type="radio" name="satisfaction" value="Dissatisfied"> Dissatisfied</label>
+                    <label style="color: black;"><input type="radio" name="satisfaction" value="Very dissatisfied"> Very Dissatisfied</label>
+                </div>
+
+                <label>Rate your experience (0-10): <span id="ratingValue">5</span></label>
+                <input type="range" id="rating" min="0" max="10" value="5" oninput="updateRating()">
+
+                <button type="button" id="nextButton">Next</button>
+                <button class="reset-btn" type="reset" id="resetButton">Reset</button>
+                <p class="error" id="satisfactionError">Please select your satisfaction level.</p>
+            </form>
+        </div>
+
+        <div id="page2" class="page">
+            <h2>Feedback Form </h2>
+            <div id="page2-content">
+                <label for="timesWorkedWithUs">How many times have you worked with us?</label>
+                <input type="number" id="timesWorkedWithUs" name="timesWorkedWithUs" min="0" value="0">
+
+            </div>
+
+            <label>Rate Us:</label>
+            <div class="stars">
+                <span class="star" data-rating="1"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-rating="2"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-rating="3"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-rating="4"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-rating="5"><i class="fa-regular fa-star"></i></span>
+            </div>
+
+            <label>Additional Feedback Comments:</label>
+            <textarea id="comment" name="comment" rows="4" maxlength="200"
+                      placeholder="Write your feedback..."></textarea>
+            <div class="char-counter"><span id="charCount">200</span> characters left</div>
+
+            <button type="button" id="submitButton">Submit</button>
+            <button class="reset-btn" type="button" id="resetPageTwoButton">Reset</button>
+            <p id="message"></p>
+
+            <p class="error" id="commentsError">Please provide your comments.</p>
+        </div>
+    </div>
+    <button class="scroll-to-top" onclick="scrollToTop()" title="Go to top">
+		<span>Go-to-Top</span>
+    </button>
+</main>
+<footer>
+    <p>© 2025 Blue  |  Blue and Clean</p>
+    <p> | </p>
+    <a href="page_editor_3/pageEditor_ST3.html">Lakshan Thiyagarajh's Page Editor</a>
+
+
+  </footer>
+<script>
+    // Get references to the elements
+    const feedbackForm = document.getElementById('feedbackForm');
+    const nextButton = document.getElementById('nextButton');
+    const resetButton = document.getElementById('resetButton');
+    const page1 = document.getElementById('page1');
+    const page2 = document.getElementById('page2');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const addressInput = document.getElementById('address');
+    const fileInput = document.getElementById('file');
+    const satisfactionRadios = document.querySelectorAll('input[name="satisfaction"]');
+    const ratingInput = document.getElementById('rating');
+    const ratingValueSpan = document.getElementById('ratingValue');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const addressError = document.getElementById('addressError');
+    const fileError = document.getElementById('fileError');
+    const satisfactionError = document.getElementById('satisfactionError');
+    const commentTextarea = document.getElementById('comment');
+    const charCountSpan = document.getElementById('charCount');
+    const submitButton = document.getElementById('submitButton');
+    const resetPageTwoButton = document.getElementById('resetPageTwoButton');
+    const messageParagraph = document.getElementById('message');
+    const commentsError = document.getElementById('commentsError');
+    const starsContainer = document.querySelector('.stars');
+    let currentRating = 0;
+    const scrollToTopBtn = document.querySelector(".scroll-to-top");
+
+    // Function to show an error message
+    function showError(element, message) {
+        element.textContent = message;
+        element.style.display = 'block';
+    }
+
+    // Function to hide an error message
+    function hideError(element) {
+        element.style.display = 'none';
+    }
+
+    // Function to validate the form
+    function validateForm() {
+        let isValid = true;
+
+        // Reset error messages
+        document.querySelectorAll('.error').forEach(hideError);
+
+        // Validate full name
+        if (!nameInput.value.trim()) {
+            showError(nameError, 'Name is required.');
+            isValid = false;
+        }
+
+        // Validate email address
+        if (!emailInput.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+            showError(emailError, 'Enter a valid email.');
+            isValid = false;
+        }
+
+        // Validate phone number
+        if (!phoneInput.value.trim() || !/^\d{10}$/.test(phoneInput.value)) {
+            showError(phoneError, 'Enter a 10-digit phone number.');
+            isValid = false;
+        }
+
+        // Validate address
+        if (!addressInput.value.trim()) {
+            showError(addressError, 'Address is required.');
+            isValid = false;
+        }
+
+        // Validate file
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const allowedTypes = ['image/jpeg', 'image/png', 'application/pdf'];
+            const maxSize = 2 * 1024 * 1024; // 2MB
+
+            if (!allowedTypes.includes(file.type)) {
+                showError(fileError, 'Invalid file type. Only JPG, PNG, and PDF are allowed.');
+                isValid = false;
+            } else if (file.size > maxSize) {
+                showError(fileError, 'File size too large. Maximum size is 2MB.');
+                isValid = false;
+            }
+        }
+
+        // Validate satisfaction
+        let satisfactionSelected = false;
+        satisfactionRadios.forEach(radio => {
+            if (radio.checked) {
+                satisfactionSelected = true;
+            }
+        });
+        if (!satisfactionSelected) {
+            showError(satisfactionError, 'Please select your satisfaction level.');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    // Function to show the second page
+    function showNextPage() {
+        if (validateForm()) {
+            page1.classList.remove('active');
+            page2.classList.add('active');
+        }
+    }
+
+    // Function to reset the first page
+    function resetPageOne() {
+        feedbackForm.reset();
+        ratingInput.value = 5;
+        ratingValueSpan.textContent = 5;
+        document.querySelectorAll('.error').forEach(hideError);
+
+    }
+
+    // Function to update the rating value
+    function updateRating() {
+        ratingValueSpan.textContent = ratingInput.value;
+    }
+
+      // Function to update the star display based on the current rating
+      function updateStarDisplay(rating) {
+        const stars = document.querySelectorAll('.star i');
+        stars.forEach((star, index) => {
+            if (index < rating) {
+                star.classList.remove('fa-regular', 'fa-star');
+                star.classList.add('fa-solid', 'fa-star');
+            } else {
+                star.classList.remove('fa-solid', 'fa-star');
+                star.classList.add('fa-regular', 'fa-star');
+            }
+        });
+    }
+
+    // Function to rate the feedback
+    function rate(rating) {
+        currentRating = rating;
+        updateStarDisplay(rating);
+    }
+
+    // Function to submit the feedback
+    function submitFeedback() {
+        const comment = commentTextarea.value.trim();
+
+        if (!comment) {
+            showError(commentsError, 'Please provide your comments.');
+            return;
+        } else {
+            hideError(commentsError);
+        }
+
+        // Simulate submission (replace with actual submission logic)
+        messageParagraph.textContent = 'Feedback submitted successfully!';
+        messageParagraph.style.color = '#00c177'; // Make success message green
+
+
+        // Simulate potential error during submission
+        const randomError = Math.random(); // Simulate error with 10% probability
+        if (randomError < 0.1) {
+            messageParagraph.textContent = 'Submission failed. Please try again.';
+            messageParagraph.style.color = 'red'; // Indicate error
+            setTimeout(() => {
+                messageParagraph.textContent = '';
+                messageParagraph.style.color = '';
+            }, 3000);
+            return; // Stop reset if error occurs
+        }
+
+        // Reset AFTER a slight delay to allow the success message to show briefly
+        setTimeout(() => {
+            resetPageTwoAndGoToOne();
+            messageParagraph.textContent = ''; // Clear the message
+            messageParagraph.style.color = ''; // Reset the color
+        }, 1000); // 1 second delay.  Adjust as needed.
+    }
+
+    // Function to reset the second page and go to the first page
+    function resetPageTwoAndGoToOne() {
+        commentTextarea.value = ''; // Clear comment
+        charCountSpan.textContent = '200'; // Reset char count
+        resetStars(); // Reset stars
+        page2.classList.remove('active'); // Hide Page 2
+        page1.classList.add('active'); // Show Page 1
+        resetPageOne();
+    }
+
+    // Function to reset the stars
+    function resetStars() {
+        const stars = document.querySelectorAll('.star i');
+        stars.forEach(star => {
+            star.classList.remove('fa-solid', 'fa-star');
+            star.classList.add('fa-regular', 'fa-star');
+        });
+        currentRating = 0; // Reset the current rating to zero
+        updateStarDisplay(0); // Set all stars to inactive state
+    }
+
+       // Event listener for the stars container
+       starsContainer.addEventListener('click', function (event) {
+            if (event.target.closest('.star')) { // Check if the clicked element or its parent has the class 'star'
+                const starElement = event.target.closest('.star'); // Get the closest parent element with the class 'star'
+                const rating = parseInt(starElement.dataset.rating); // Get the rating from the data-rating attribute
+                rate(rating); // Call the rate function with the rating
+            }
+        });
+
+    // Event listener for the next button
+    nextButton.addEventListener('click', showNextPage);
+
+    // Event listener for the reset button
+    resetButton.addEventListener('click', resetPageOne);
+
+    // Event listener for the submit button
+    submitButton.addEventListener('click', submitFeedback);
+
+    // Event listener for the reset page two button
+    resetPageTwoButton.addEventListener('click', resetPageTwoAndGoToOne);
+
+    // Event listener for the comment textarea
+    commentTextarea.addEventListener('input', function () {
+        const maxLength = 200;
+        const currentLength = this.value.length;
+        charCountSpan.textContent = maxLength - currentLength;
+    });
+    // Scroll to top button functionality
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollToTopBtn.style.display = "block";
+        } else {
+            scrollToTopBtn.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+</script>
+</body>
+</html>

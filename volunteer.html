@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue</title>
+    <link rel="stylesheet" href="student1-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+          <a id="logo" href="" target="_self">
+            <img width="45" src="./images/logo.png" alt="logo">
+          </a>
+          <a href="home.html" target="_self">Home</a>
+          <a href="team.html" target="_self">Team</a>
+          <a href="sitemap.html" target="_self">Sitemap</a>
+          <a href="profile.html" target="_self">Profile</a>
+          <a style="color: #00ace6;; cursor: pointer;">Volunteer</a>
+          <a href="table.html" target="_self">Table</a>
+          <a href="feedback.html" target="_self">Feedback</a>
+        </nav>
+    </header>
+
+  <main>
+    <div id="volunteer" class="content">
+        <h2>Volunteer Opportunities</h2>
+
+        <div class="volunteer-list">
+            <div class="BeachCard">
+                <img src="./images/image_1.jpg" alt="BeachCard" width="200">
+                <div class="card-content">
+                    <h4>Beach Cleanup</h4>
+                    <p>Join our beach cleanup to protect marine life.</p>
+                </div>
+            </div>
+
+            <div class="WasteManagement">
+                <img src="./images/image_2.webp" alt="WasteManagement" width="200">
+                <div class="card-content">
+                    <h3>Waste Management</h3>
+                    <p>Keeping beaches clean by collecting and properly disposing of waste.</p>
+                </div>
+            </div>
+
+            <div class="MarineDebrisCleanup">
+                <img src="./images/image_3.jpg" alt="MarineDebrisCleanup" width="200">
+                <div class="card-content">
+                    <h3>Marine Debris Cleanup</h3>
+                    <p>Removing fishing nets, ropes, and other debris from the shoreline.</p>
+                </div>
+            </div>
+
+            <div class="UnderwaterCleanup">
+                <img src="./images/image_4.jpg" alt="UnderwaterCleanup" width="200">
+                <div class="card-content">
+                    <h3>Underwater Cleanup</h3>
+                    <p>Scuba divers and snorkelers removing submerged trash.</p>
+                </div>
+            </div>
+
+            <div class="MicroplasticCollection">
+                <img src="./images/image_5.jpg" alt="MicroplasticCollection" width="200">
+                <div class="card-content">
+                    <h3>Microplastic Collection</h3>
+                    <p>Identifying and collecting small plastic particles from the sand.</p>
+                </div>
+            </div>
+
+            <div class="EducationalAwareness">
+                <img src="./images/image_6.jpg" alt="EducationalAwareness" width="300">
+                <div class="card-content">
+                    <h3>Educational Awareness & Campaigns</h3>
+                    <p>Organizing workshops and social campaigns on reducing ocean pollution.</p>
+                </div>
+            </div>
+
+            <div class="Donate">
+                <div class="card-content">
+                    <h3>Donation for Beach Cleanup</h3>
+                    <p>Support a cleaner ocean – Your donation helps keep our beaches trash-free!</p>
+                    <button class="Donate-btn" onclick="showDonationForm()">DONATE</button>
+                </div>
+            </div>
+
+            <!-- Donation Form -->
+            <div id="Donation-form" class="Donation-form-container">
+                <h3>Donation Signup</h3>
+                <form id="donationForm" onsubmit="submitDonationForm(event)">
+                    <input type="text" class="form-input" placeholder="Full Name" required>
+                    <input type="email" class="form-input" placeholder="Email" required>
+                    <input type="number" class="form-input" placeholder="Donation Amount" required>
+                    <input type="tel" class="form-input" placeholder="Credit Card Number" required>
+
+                    <button type="submit" class="form-btn">Submit</button>
+                    <button type="button" class="close-btn" onclick="closeDonationForm()">Close</button>
+                </form>
+            </div>
+
+            <div class="Joinforvolunteer">
+                <div class="card-content">
+                    <h3>Join for volunteer</h3>
+                    <p>Join us as a volunteer and make a difference in cleaning our beaches!</p>
+                    <button class="volunteer-join-btn" onclick="showVolunteerForm()">Join Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="volunteer-form" class="volunteer-form-container">
+        <h3>Volunteer Signup</h3>
+        <form id="volunteerForm" onsubmit="submitVolunteerForm(event)">
+            <input type="text" class="form-input" placeholder="Full Name" required>
+            <input type="email" class="form-input" placeholder="Email" required>
+            <input type="number" id="age" class="form-input" placeholder="Age" required>
+            <input type="tel" class="form-input" placeholder="Phone Number" required>
+
+            <select id="gender" class="form-input" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+
+            <select id="volunteerExperience" class="form-input" required>
+                <option value="">Is this your first time volunteering with us?</option>
+                <option value="first">Yes, first time</option>
+                <option value="second">No, second time</option>
+                <option value="more">No, more than two times</option>
+            </select>
+
+            <div id="firstTimeSection">
+                <select id="previousVolunteering" class="form-input">
+                    <option value="">Have you done any volunteering before?</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div id="eventSelection">
+                <select id="userEventChoosing" class="form-input">
+                    <option value="">Choose the Event you would like to Volunteer</option>
+                    <option value="beachCleanup">Beach Cleanups</option>
+                    <option value="coralRestoration">Coral Reef Restoration</option>
+                    <option value="fishingWorkshop">Sustainable Fishing Workshops</option>
+                    <option value="turtleProtection">Sea Turtle Protection</option>
+                </select>
+            </div>
+
+            <button type="submit" class="form-btn">Submit</button>
+            <button type="button" class="close-btn" onclick="closeVolunteerForm()">Close</button>
+        </form>
+    </div>
+
+    <!-- Emoji Rating Section -->
+    <div class="emoji-rating" style="display: block;">
+        <label>Rate Us:</label>
+        <div>
+            <span class="emoji" data-rating="1" onclick="rate(1)">😠</span>
+            <span class="emoji" data-rating="2" onclick="rate(2)">😞</span>
+            <span class="emoji" data-rating="3" onclick="rate(3)">😐</span>
+            <span class="emoji" data-rating="4" onclick="rate(4)">😊</span>
+            <span class="emoji" data-rating="5" onclick="rate(5)">😁</span>
+        </div>
+        <p id="selected-rating">Selected Rating: 0</p>
+    </div>
+
+    <!-- Volunteer Feedback Form -->
+    <form id="volunteerFeedbackForm" onsubmit="return false;">
+        <label for="volunteerComment" style="text-align: center; display: block;">Additional Volunteer Feedback:</label>
+        <br>
+        <textarea id="volunteerComment" name="volunteerComment" rows="4" maxlength="200" placeholder="Write your feedback about volunteering..."></textarea>
+        <div class="char-counter">
+            <span id="volunteerCharCount">200</span> characters left
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitVolunteerFeedback()">Submit</button>
+        <button class="reset-btn" type="button" onclick="resetVolunteerFeedbackForm()">Reset</button>
+        <p id="volunteerMessage"></p>
+
+        <p class="error" id="volunteerCommentsError">Please provide your comments.</p>
+    </form>
+
+    <!-- Custom Popup Modal -->
+    <div id="overlay" class="overlay"></div>
+    <div id="popup" class="popup">
+        <div id="popup-message" class="popup-content"></div>
+        <button class="popup-close" onclick="closePopup()">OK</button>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Blue  |  Blue and Clean</p>
+    <p> | </p>
+    <a href="Page_editor_1/pageEditor_ST1.html">Page Editor</a>
+  </footer>
+
+  <script>
+    // Donation Form functions
+    function showDonationForm() {
+        document.getElementById('Donation-form').style.display = 'block';
+        document.getElementById('volunteer').style.display = 'none';
+    }
+    function closeDonationForm() {
+        document.getElementById('Donation-form').style.display = 'none';
+        document.getElementById('volunteer').style.display = 'block';
+    }
+    function submitDonationForm(event) {
+        event.preventDefault();
+        alert('Thank you for your donation!');
+        closeDonationForm();
+    }
+
+    // Volunteer Form functions
+    function showVolunteerForm() {
+        document.getElementById('volunteer-form').style.display = 'block';
+        document.getElementById('volunteer').style.display = 'none';
+    }
+    function closeVolunteerForm() {
+        document.getElementById('volunteer-form').style.display = 'none';
+        document.getElementById('volunteer').style.display = 'block';
+    }
+    function submitVolunteerForm(event) {
+        event.preventDefault();
+        alert('Thank you for volunteering!');
+        closeVolunteerForm();
+    }
+
+    // Emoji Rating functions
+    function rate(rating) {
+        document.getElementById('selected-rating').innerText = 'Selected Rating: ' + rating;
+    }
+
+    // Dynamically update character count in feedback form
+document.getElementById('volunteerComment').addEventListener('input', function() {
+    var remainingChars = 200 - this.value.length;
+    document.getElementById('volunteerCharCount').innerText = remainingChars;
+});
+
+// Feedback Form functions
+function submitVolunteerFeedback() {
+    var comment = document.getElementById('volunteerComment').value;
+    if (comment.trim() === '') {
+        document.getElementById('volunteerCommentsError').style.display = 'block';
+    } else {
+        document.getElementById('volunteerCommentsError').style.display = 'none';
+        document.getElementById('volunteerMessage').innerText = 'Feedback submitted successfully!';
+    }
+}
+
+function resetVolunteerFeedbackForm() {
+    document.getElementById('volunteerFeedbackForm').reset();
+    document.getElementById('volunteerCharCount').innerText = 200;
+}
+
+    // Popup Modal functions
+    function showPopup(message) {
+        document.getElementById('popup-message').innerText = message;
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
